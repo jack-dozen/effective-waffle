@@ -63,7 +63,7 @@ def show_snack(
         duration : durasi tampil dalam ms (default 3000)
     """
     cfg = _SNACK_CONFIG.get(type, _SNACK_CONFIG["info"])
-
+    print("hai")
     # Garis warna kiri sebagai indikator tipe
     snack = ft.SnackBar(
         content=ft.Row(
