@@ -1,6 +1,6 @@
 [
   {
-    "type": "and_expression",
+    "type": "and_expr",
     "named": true,
     "fields": {
       "left": {
@@ -8,7 +8,7 @@
         "required": true,
         "types": [
           {
-            "type": "and_expression",
+            "type": "and_expr",
             "named": true
           },
           {
@@ -16,19 +16,19 @@
             "named": true
           },
           {
-            "type": "contains_expression",
+            "type": "contains_expr",
             "named": true
           },
           {
-            "type": "in_expression",
+            "type": "in_expr",
             "named": true
           },
           {
-            "type": "not_expression",
+            "type": "not_expr",
             "named": true
           },
           {
-            "type": "or_expression",
+            "type": "or_expr",
             "named": true
           },
           {
@@ -42,7 +42,7 @@
         "required": true,
         "types": [
           {
-            "type": "and_expression",
+            "type": "and_expr",
             "named": true
           },
           {
@@ -50,19 +50,19 @@
             "named": true
           },
           {
-            "type": "contains_expression",
+            "type": "contains_expr",
             "named": true
           },
           {
-            "type": "in_expression",
+            "type": "in_expr",
             "named": true
           },
           {
-            "type": "not_expression",
+            "type": "not_expr",
             "named": true
           },
           {
-            "type": "or_expression",
+            "type": "or_expr",
             "named": true
           },
           {
@@ -97,28 +97,8 @@
         "required": true,
         "types": [
           {
-            "type": "!=",
-            "named": false
-          },
-          {
-            "type": "<",
-            "named": false
-          },
-          {
-            "type": "<=",
-            "named": false
-          },
-          {
-            "type": "=",
-            "named": false
-          },
-          {
-            "type": ">",
-            "named": false
-          },
-          {
-            "type": ">=",
-            "named": false
+            "type": "operator",
+            "named": true
           }
         ]
       },
@@ -143,7 +123,7 @@
     }
   },
   {
-    "type": "contains_expression",
+    "type": "contains_expr",
     "named": true,
     "fields": {
       "field": {
@@ -169,7 +149,7 @@
     }
   },
   {
-    "type": "in_expression",
+    "type": "in_expr",
     "named": true,
     "fields": {
       "field": {
@@ -183,11 +163,31 @@
         ]
       },
       "values": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
-            "type": "value_list",
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -195,47 +195,51 @@
     }
   },
   {
-    "type": "not_expression",
+    "type": "not_expr",
     "named": true,
-    "fields": {
-      "operand": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "and_expression",
-            "named": true
-          },
-          {
-            "type": "comparison",
-            "named": true
-          },
-          {
-            "type": "contains_expression",
-            "named": true
-          },
-          {
-            "type": "in_expression",
-            "named": true
-          },
-          {
-            "type": "not_expression",
-            "named": true
-          },
-          {
-            "type": "or_expression",
-            "named": true
-          },
-          {
-            "type": "parenthesized",
-            "named": true
-          }
-        ]
-      }
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "and_expr",
+          "named": true
+        },
+        {
+          "type": "comparison",
+          "named": true
+        },
+        {
+          "type": "contains_expr",
+          "named": true
+        },
+        {
+          "type": "in_expr",
+          "named": true
+        },
+        {
+          "type": "not_expr",
+          "named": true
+        },
+        {
+          "type": "or_expr",
+          "named": true
+        },
+        {
+          "type": "parenthesized",
+          "named": true
+        }
+      ]
     }
   },
   {
-    "type": "or_expression",
+    "type": "operator",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "or_expr",
     "named": true,
     "fields": {
       "left": {
@@ -243,7 +247,7 @@
         "required": true,
         "types": [
           {
-            "type": "and_expression",
+            "type": "and_expr",
             "named": true
           },
           {
@@ -251,19 +255,19 @@
             "named": true
           },
           {
-            "type": "contains_expression",
+            "type": "contains_expr",
             "named": true
           },
           {
-            "type": "in_expression",
+            "type": "in_expr",
             "named": true
           },
           {
-            "type": "not_expression",
+            "type": "not_expr",
             "named": true
           },
           {
-            "type": "or_expression",
+            "type": "or_expr",
             "named": true
           },
           {
@@ -277,7 +281,7 @@
         "required": true,
         "types": [
           {
-            "type": "and_expression",
+            "type": "and_expr",
             "named": true
           },
           {
@@ -285,19 +289,19 @@
             "named": true
           },
           {
-            "type": "contains_expression",
+            "type": "contains_expr",
             "named": true
           },
           {
-            "type": "in_expression",
+            "type": "in_expr",
             "named": true
           },
           {
-            "type": "not_expression",
+            "type": "not_expr",
             "named": true
           },
           {
-            "type": "or_expression",
+            "type": "or_expr",
             "named": true
           },
           {
@@ -317,7 +321,7 @@
       "required": true,
       "types": [
         {
-          "type": "and_expression",
+          "type": "and_expr",
           "named": true
         },
         {
@@ -325,19 +329,19 @@
           "named": true
         },
         {
-          "type": "contains_expression",
+          "type": "contains_expr",
           "named": true
         },
         {
-          "type": "in_expression",
+          "type": "in_expr",
           "named": true
         },
         {
-          "type": "not_expression",
+          "type": "not_expr",
           "named": true
         },
         {
-          "type": "or_expression",
+          "type": "or_expr",
           "named": true
         },
         {
@@ -353,11 +357,11 @@
     "root": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": true,
+      "multiple": true,
+      "required": false,
       "types": [
         {
-          "type": "and_expression",
+          "type": "and_expr",
           "named": true
         },
         {
@@ -365,46 +369,23 @@
           "named": true
         },
         {
-          "type": "contains_expression",
+          "type": "contains_expr",
           "named": true
         },
         {
-          "type": "in_expression",
+          "type": "in_expr",
           "named": true
         },
         {
-          "type": "not_expression",
+          "type": "not_expr",
           "named": true
         },
         {
-          "type": "or_expression",
+          "type": "or_expr",
           "named": true
         },
         {
           "type": "parenthesized",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "value_list",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         }
       ]
